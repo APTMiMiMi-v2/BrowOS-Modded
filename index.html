@@ -343,7 +343,7 @@
 
 						<div>
 							<div class="about-name">BrowOS</div>
-							<p>Version 1.0</p>
+							<p id="aboutVersion">Version 1.0</p>
 							<p class="about-by">By <a href="https://www.youtube.com/@YourAllyhere" target="_blank">Allysun</a></p>
 						</div>
 					</div>
@@ -617,6 +617,18 @@
 		</div>
 	</div>
 
+	<!-- What's new (after an update) -->
+	<div class="whats-new" id="whatsNew" hidden>
+		<div class="whats-new-box">
+			<div class="whats-new-header">
+				<span id="whatsNewTitle">What's new</span>
+				<button class="whats-new-close" id="whatsNewClose" aria-label="Close">×</button>
+			</div>
+			<ul class="whats-new-list" id="whatsNewList"></ul>
+			<button class="whats-new-ok" id="whatsNewOk">Got it</button>
+		</div>
+	</div>
+
 	<!-- Update popup -->
 	<div class="update-popup" id="updatePopup" hidden>
 		<div class="update-title" id="updateTitle"></div>
@@ -682,5 +694,6 @@
 <script src="js/browstore.js"></script>
 <script src="js/task-manager.js"></script>
 <script src="js/update.js"></script>
+<script src="js/whats-new.js"></script>
 </body>
 </html>

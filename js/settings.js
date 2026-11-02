@@ -210,3 +210,7 @@ resetSettingsButton.addEventListener("click", function () {
 
 	location.reload();
 });
+
+// About: the real version, so users can see if they're up to date
+
+document.getElementById("aboutVersion").textContent = "Version " + chrome.runtime.getManifest().version;
