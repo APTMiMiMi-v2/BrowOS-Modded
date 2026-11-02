@@ -127,23 +127,14 @@ async function keepInside(windowId) {
 		return;
 	}
 
-	if (floating.state === "minimized") {
+	// minimized, maximized or full screen: the user chose that, leave the window alone
+	// (only normal-sized windows are kept inside the BrowOS desktop)
+
+	if (floating.state !== "normal") {
 		return;
 	}
 
 	const area = await browosArea();
-
-	// "maximize" means: fill the BrowOS desktop, not the whole screen
-
-	if (floating.state === "maximized" || floating.state === "fullscreen") {
-		ignoreBoundsUntil[windowId] = Date.now() + 800;
-
-		chrome.windows
-			.update(windowId, Object.assign({ state: "normal" }, area))
-			.catch(function () {});
-
-		return;
-	}
 
 	const fitted = fitInArea(floating, area);
 
